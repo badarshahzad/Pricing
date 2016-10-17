@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.granitetransformations.Pricing.ShowerController">
+   <children>
+      <AnchorPane prefHeight="768.0" prefWidth="1366.0">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                     <tabs>
+                        <Tab fx:id="tab1" text="Shower">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5469208211143695" prefHeight="506.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <BorderPane>
+                                             <center>
+                                                <SplitPane prefHeight="539.0" prefWidth="529.0">
+                                                   <items>
+                                                      <BorderPane>
+                                                         <center>
+                                                            <TableView fx:id="showerTable" editable="true" prefHeight="433.0" prefWidth="175.0" BorderPane.alignment="CENTER">
+                                                               <columns>
+                                                                  <TableColumn prefWidth="75.0" text="Shower">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="column1t1" prefWidth="75.0" text="Length" />
+                                                                        <TableColumn fx:id="column2t1" prefWidth="75.0" text="Width" />
+                                                                     </columns>
+                                                                  </TableColumn>
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </TableView>
+                                                         </center>
+                                                         <bottom>
+                                                            <VBox fx:id="vbox1" BorderPane.alignment="CENTER">
+                                                               <children>
+                                                                  <ToolBar fx:id="toolBar1" prefHeight="40.0" prefWidth="200.0">
+                                                                     <items>
+                                                                        <Button fx:id="addButtont1" mnemonicParsing="false" onAction="#addRowTable1" text="Add" />
+                                                                        <Button fx:id="deleteButtont1" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleDeleteRowT1" text="Delete" />
+                                                                        <ChoiceBox fx:id="gColorBox1" prefWidth="150.0" />
+                                                                        <CheckBox fx:id="showIncludeCheckBox" mnemonicParsing="false" text="Include" />
+                                                                     </items>
+                                                                  </ToolBar>
+                                                               </children>
+                                                            </VBox>
+                                                         </bottom>
+                                                      </BorderPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                             <center>
+                                                <TableView fx:id="showerEdgingTable" editable="true" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnt2" prefWidth="75.0" text="Id" visible="false" />
+                                                      <TableColumn prefWidth="75.0" text="Edging">
+                                                         <columns>
+                                                            <TableColumn fx:id="column1t2" prefWidth="75.0" text="Length" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="column2t2" prefWidth="75.0" text="Bevel" />
+                                                      <TableColumn fx:id="column3t2" prefWidth="75.0" text="Polished" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                             <bottom>
+                                                <VBox BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <ToolBar fx:id="toolBar6" prefHeight="40.0" prefWidth="200.0">
+                                                         <items>
+                                                            <Button fx:id="addButtont2" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="deleteButtont2" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                            <ChoiceBox fx:id="gColorBox2" prefWidth="150.0" />
+                                                            <CheckBox fx:id="showerEdgingCheckBox" mnemonicParsing="false" text="Include" />
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </VBox>
+                                             </bottom>
+                                          </BorderPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab2" text="Walls">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5" prefHeight="506.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <BorderPane>
+                                             <center>
+                                                <TableView fx:id="backsplashTable" editable="true" prefHeight="464.0" prefWidth="557.0" BorderPane.alignment="CENTER">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnt3" prefWidth="75.0" text="Id" visible="false" />
+                                                      <TableColumn prefWidth="75.0" text="Bathroom Walls">
+                                                         <columns>
+                                                            <TableColumn fx:id="columnt3" prefWidth="75.0" text="Piece" visible="false" />
+                                                            <TableColumn fx:id="column1t3" prefWidth="75.0" text="Length" />
+                                                            <TableColumn fx:id="column2t3" prefWidth="75.0" text="Width" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                             <bottom>
+                                                <VBox BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                         <items>
+                                                            <Button fx:id="addButtonT3" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="deleteButtonT3" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                            <ChoiceBox fx:id="gColorBox3" prefWidth="150.0" />
+                                                            <CheckBox fx:id="wallsIncludeCheckBox" mnemonicParsing="false" text="Include" />
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </VBox>
+                                             </bottom>
+                                          </BorderPane>
+                                          <BorderPane>
+                                             <bottom>
+                                                <VBox BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                         <items>
+                                                            <Button fx:id="addButtont4" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="editButtonT3" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Edit" />
+                                                            <Button fx:id="deleteButtont4" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                            <ChoiceBox fx:id="gColorBox4" prefWidth="150.0" />
+                                                            <CheckBox fx:id="wallEdgingIncludeCheckBox" mnemonicParsing="false" text="Include" />
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </VBox>
+                                             </bottom>
+                                             <center>
+                                                <TableView fx:id="wallEdgingTable" editable="true" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+                                                   <columns>
+                                                      <TableColumn fx:id="column4" prefWidth="75.0" text="Id" visible="false" />
+                                                      <TableColumn prefWidth="75.0" text="Edging">
+                                                         <columns>
+                                                            <TableColumn fx:id="column1t4" prefWidth="75.0" text="Length" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="column2t4" prefWidth="75.0" text="Bevel" />
+                                                      <TableColumn fx:id="column3t4" prefWidth="75.0" text="Polished" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                          </BorderPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab3" text="Vanity">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5469208211143695" prefHeight="506.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <BorderPane>
+                                             <center>
+                                                <SplitPane prefHeight="539.0" prefWidth="529.0">
+                                                   <items>
+                                                      <BorderPane>
+                                                         <center>
+                                                            <TableView fx:id="vanityTable" editable="true" prefHeight="433.0" prefWidth="175.0" BorderPane.alignment="CENTER">
+                                                               <columns>
+                                                                  <TableColumn prefWidth="75.0" text="Bathroom Vanity">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="column1t5" prefWidth="75.0" text="Id" visible="false" />
+                                                                        <TableColumn fx:id="column2t5" prefWidth="75.0" text="Piece" visible="false" />
+                                                                        <TableColumn fx:id="column3t5" prefWidth="75.0" text="Length" />
+                                                                        <TableColumn fx:id="column4t5" prefWidth="75.0" text="Width" />
+                                                                     </columns>
+                                                                  </TableColumn>
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </TableView>
+                                                         </center>
+                                                         <bottom>
+                                                            <VBox fx:id="vbox11" BorderPane.alignment="CENTER">
+                                                               <children>
+                                                                  <ToolBar fx:id="toolBar11" prefHeight="40.0" prefWidth="200.0">
+                                                                     <items>
+                                                                        <Button fx:id="addButtont11" mnemonicParsing="false" text="Add" />
+                                                                        <Button fx:id="deleteButtont11" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                                        <ChoiceBox fx:id="gColorBox5" prefWidth="150.0" />
+                                                                        <CheckBox fx:id="showIncludeCheckBox1" mnemonicParsing="false" text="Include" />
+                                                                     </items>
+                                                                  </ToolBar>
+                                                               </children>
+                                                            </VBox>
+                                                         </bottom>
+                                                      </BorderPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                             <center>
+                                                <TableView fx:id="vanityEdgingTable" editable="true" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnt6" prefWidth="75.0" text="Id" visible="false" />
+                                                      <TableColumn prefWidth="75.0" text="Vanity Edging">
+                                                         <columns>
+                                                            <TableColumn fx:id="column1t6" prefWidth="75.0" text="Length" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="column2t6" prefWidth="75.0" text="Bevel" />
+                                                      <TableColumn fx:id="column3t6" prefWidth="75.0" text="Polished" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                             <bottom>
+                                                <VBox BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <ToolBar fx:id="toolBar61" prefHeight="40.0" prefWidth="200.0">
+                                                         <items>
+                                                            <Button fx:id="addButtont21" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="deleteButtont21" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                            <ChoiceBox fx:id="gColorBox6" prefWidth="150.0" />
+                                                            <CheckBox fx:id="showerEdgingCheckBox1" mnemonicParsing="false" text="Include" />
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </VBox>
+                                             </bottom>
+                                          </BorderPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab4" text="Roman Tub">
+                           <content>
+                              <SplitPane dividerPositions="0.5">
+                                 <items>
+                                    <BorderPane>
+                                       <center>
+                                          <TableView fx:id="romanTubTable" editable="true" prefHeight="647.0" prefWidth="680.0" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="Roman Tub Surround">
+                                                   <columns>
+                                                      <TableColumn fx:id="column1t7" prefWidth="75.0" text="Length" />
+                                                      <TableColumn fx:id="column2t7" prefWidth="75.0" text="Width" />
+                                                   </columns>
+                                                </TableColumn>
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </center>
+                                       <bottom>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="hbox" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="addButtont5" mnemonicParsing="false" text="Add" />
+                                                <Button fx:id="deleteButtont5" mnemonicParsing="false" text="Delete" />
+                                                <ChoiceBox fx:id="gColorBox7" prefWidth="150.0" />
+                                                <CheckBox fx:id="romanIncludeCheckBox" mnemonicParsing="false" text="Include" />
+                                             </children>
+                                          </HBox>
+                                       </bottom>
+                                    </BorderPane>
+                                    <BorderPane>
+                                       <center>
+                                          <TableView fx:id="romanEdgingTable" editable="true" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="Roman Tub Surround Edging">
+                                                   <columns>
+                                                      <TableColumn fx:id="column1t8" prefWidth="75.0" text="Length" />
+                                                      <TableColumn fx:id="column2t8" prefWidth="75.0" text="Width" />
+                                                      <TableColumn fx:id="column3t8" prefWidth="75.0" text="Polished" />
+                                                   </columns>
+                                                </TableColumn>
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </center>
+                                       <bottom>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="hbox" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="addButtont6" mnemonicParsing="false" text="Add" />
+                                                <Button fx:id="deleteButtont6" mnemonicParsing="false" text="Delete" />
+                                                <ChoiceBox fx:id="gColorBox8" prefWidth="150.0" />
+                                                <CheckBox fx:id="romanEdgingIncludeCheckBox" mnemonicParsing="false" text="Include" />
+                                             </children>
+                                          </HBox>
+                                       </bottom>
+                                    </BorderPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab5" text="Floor">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5469208211143695" prefHeight="506.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <items>
+                                          <BorderPane>
+                                             <center>
+                                                <SplitPane prefHeight="539.0" prefWidth="529.0">
+                                                   <items>
+                                                      <BorderPane>
+                                                         <center>
+                                                            <TableView fx:id="floorTable" editable="true" prefHeight="433.0" prefWidth="175.0" BorderPane.alignment="CENTER">
+                                                               <columns>
+                                                                  <TableColumn prefWidth="75.0" text="Floor">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="column1t9" prefWidth="75.0" text="Id" visible="false" />
+                                                                        <TableColumn fx:id="column2t9" prefWidth="75.0" text="Piece" visible="false" />
+                                                                        <TableColumn fx:id="column3t9" prefWidth="75.0" text="Length" />
+                                                                        <TableColumn fx:id="column4t9" prefWidth="75.0" text="Width" />
+                                                                     </columns>
+                                                                  </TableColumn>
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </TableView>
+                                                         </center>
+                                                         <bottom>
+                                                            <VBox fx:id="vbox111" BorderPane.alignment="CENTER">
+                                                               <children>
+                                                                  <ToolBar fx:id="toolBar111" prefHeight="40.0" prefWidth="200.0">
+                                                                     <items>
+                                                                        <Button fx:id="addButtont111" mnemonicParsing="false" text="Add" />
+                                                                        <Button fx:id="deleteButtont111" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                                        <ChoiceBox fx:id="gColorBox10" prefWidth="150.0" />
+                                                                        <CheckBox fx:id="showIncludeCheckBox11" mnemonicParsing="false" text="Include" />
+                                                                     </items>
+                                                                  </ToolBar>
+                                                               </children>
+                                                            </VBox>
+                                                         </bottom>
+                                                      </BorderPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                             <center>
+                                                <TableView fx:id="floorEdgingTable" editable="true" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+                                                   <columns>
+                                                      <TableColumn fx:id="columnt10" prefWidth="75.0" text="Id" visible="false" />
+                                                      <TableColumn prefWidth="75.0" text="Floor Edging">
+                                                         <columns>
+                                                            <TableColumn fx:id="column1t10" prefWidth="75.0" text="Length" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="column2t10" prefWidth="75.0" text="Bevel" />
+                                                      <TableColumn fx:id="column3t10" prefWidth="75.0" text="Polished" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </center>
+                                             <bottom>
+                                                <VBox BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <ToolBar fx:id="toolBar611" prefHeight="40.0" prefWidth="200.0">
+                                                         <items>
+                                                            <Button fx:id="addButtont211" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="deleteButtont211" layoutX="52.0" layoutY="13.0" mnemonicParsing="false" text="Delete" />
+                                                            <CheckBox fx:id="showerEdgingCheckBox11" mnemonicParsing="false" text="Include" />
+                                                            <ChoiceBox fx:id="gColorBox12" prefWidth="150.0" />
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </VBox>
+                                             </bottom>
+                                          </BorderPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab6" text="Options">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane layoutX="14.0" layoutY="4.0" prefHeight="605.0" prefWidth="1000.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="63.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="300.0" minWidth="0.0" prefWidth="50.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="300.0" minWidth="1.0" prefWidth="5.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <CheckBox fx:id="check1" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" />
+                                          <CheckBox fx:id="check2" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <CheckBox fx:id="check3" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <CheckBox fx:id="check4" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <CheckBox fx:id="check5" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <CheckBox fx:id="check6" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                          <CheckBox fx:id="check7" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                                          <CheckBox fx:id="check8" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                          <TextField fx:id="check1TextField" minHeight="20.0" minWidth="50.0" prefHeight="35.0" prefWidth="80.0" promptText="Square Feet" text="0.00" GridPane.columnIndex="3" />
+                                          <TextField fx:id="check2TextField" minHeight="20.0" minWidth="50.0" promptText="Linear Feet" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextField fx:id="check3TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <TextField fx:id="check4TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <TextField fx:id="check5TextField" promptText="Square Feet" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <TextField fx:id="check6TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                          <TextField fx:id="check7TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                          <TextField fx:id="check8TextField" promptText="Linear Feet" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <TextField fx:id="check11TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <TextField fx:id="check12TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                          <TextField fx:id="check13TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                                          <TextField fx:id="check14TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                                          <TextField fx:id="check15TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                                          <TextField fx:id="check16TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                                          <TextField fx:id="check17TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                                          <TextField fx:id="check18TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+                                          <TextField fx:id="check19TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+                                          <TextField fx:id="check20TextField" text="0.00" GridPane.columnIndex="3" GridPane.rowIndex="17" />
+                                          <CheckBox fx:id="check11" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                          <CheckBox fx:id="check12" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                                          <CheckBox fx:id="check13" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                                          <CheckBox fx:id="check14" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                                          <CheckBox fx:id="check15" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                                          <CheckBox fx:id="check16" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+                                          <CheckBox fx:id="check17" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+                                          <CheckBox fx:id="check18" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="15" />
+                                          <CheckBox fx:id="check19" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="16" />
+                                          <CheckBox fx:id="check20" mnemonicParsing="false" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="17" />
+                                          <Label text="Additional Accent Strips" GridPane.columnSpan="2" />
+                                          <Label text="Inlays" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                          <Label text="Removal of Vinyl Shower Enclosure or Tub" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                                          <Label text="Removal of Old Shower Doors" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                                          <Label text="Removal of Old Shower Pan" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+                                          <Label text="Remove Damaged Tile" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+                                          <Label text="Installation of New Custom Wet Bed Floor" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+                                          <Label text="Installation of Shower Shelf " GridPane.columnSpan="3" GridPane.rowIndex="7" />
+                                          <Label text="Installation of Towel Bars" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                                          <Label text="Installation of Soal Dish" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+                                          <Label text="Installation of Inset Shelfs" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                                          <Label text="Cutouts" GridPane.rowIndex="12" />
+                                          <Label text="Installation of New Cement Board" GridPane.columnSpan="3" GridPane.rowIndex="13" />
+                                          <Label text="Rough-in New Shower Seat" GridPane.columnSpan="3" GridPane.rowIndex="11" />
+                                          <Label text="Installation of New Sheetrock" GridPane.columnSpan="3" GridPane.rowIndex="14" />
+                                          <Label text="Installation of PrepBoard" GridPane.columnSpan="3" GridPane.rowIndex="15" />
+                                          <Label text="New Shower Valve\Trim" GridPane.columnSpan="3" GridPane.rowIndex="16" />
+                                          <Label text="Plumbing for Shower Valve" GridPane.columnSpan="3" GridPane.rowIndex="17" />
+                                          <Label text="BCI Tub Liner" GridPane.columnIndex="5" />
+                                          <Label text="BCI Walls - Smooth Colors" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <Label text="BCI Walls - Simulated Tile" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Label text="Other" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                          <Label text="Other" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                                          <Label text="Shower" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                          <Label text="Shower Curb" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                                          <Label text="Credit for Accented Curbs" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                          <Label text="Roman Bath Tub" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                          <Label text="Plumbing Door Access" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                                          <Label text="Removal of Existing CT - Laminate" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+                                          <Label text="Bathroom Vanity" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                                          <Label text="Installation of New CT" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                                          <Label text="U/M Sink Trim 2 Bath Vanity Sinks" GridPane.columnIndex="5" GridPane.rowIndex="14" />
+                                          <Label text="U/M Sink Trim 1 Bath Vanity Sinks" GridPane.columnIndex="5" GridPane.rowIndex="13" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="13" />
+                                          <TextField text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="13" />
+                                          <CheckBox mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+                                       </children>
+                                    </GridPane>
+                                    <Group layoutX="992.0" layoutY="14.0">
+                                       <children>
+                                          <TextField fx:id="plumbingField" layoutX="166.0" text="0.00" />
+                                          <TextField fx:id="accessoriesField" layoutX="166.0" layoutY="29.0" text="0.00" />
+                                          <TextField fx:id="switchPlatesField" layoutX="166.0" layoutY="55.0" text="0.00" />
+                                          <TextField fx:id="toeKicksTextField" layoutX="166.0" layoutY="89.0" prefHeight="35.0" prefWidth="153.0" text="0.00" />
+                                          <Label layoutY="9.0" text="Plumbing" />
+                                          <Label layoutX="1.0" layoutY="38.0" text="Sink, Faucets &amp; Accessories" />
+                                          <Label layoutX="1.0" layoutY="64.0" text="Switch Plates" />
+                                          <Label layoutX="1.0" layoutY="90.0" text="Toe Kicks" />
+                                          <CheckBox layoutX="328.0" layoutY="9.0" mnemonicParsing="false" />
+                                          <CheckBox layoutX="328.0" layoutY="38.0" mnemonicParsing="false" />
+                                          <CheckBox layoutX="328.0" layoutY="64.0" mnemonicParsing="false" />
+                                          <CheckBox layoutX="328.0" layoutY="90.0" mnemonicParsing="false" />
+                                       </children>
+                                    </Group>
+                                    <TextArea layoutX="981.0" layoutY="394.0" prefHeight="212.0" prefWidth="371.0" promptText="Enter Custom Text For Working Proposal Here" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab7" disable="true" text="Measurements">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane layoutX="14.0" layoutY="24.0" prefHeight="224.0" prefWidth="324.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="areaFieldsqftT1" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="edgingField1" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="beveledEdgesField1" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="polishedEdgesField1" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Square Feet: Kitchen" GridPane.rowIndex="1" />
+                                          <Label text="Kitchen Measurements" />
+                                          <Label text="Linear Feet: Edging" GridPane.rowIndex="2" />
+                                          <Label text="Linear Feet: Bevel Edging" GridPane.rowIndex="3" />
+                                          <Label text="Linear Feet: Polished Edges" GridPane.rowIndex="4" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="695.0" layoutY="24.0" prefHeight="224.0" prefWidth="324.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="areaFieldsqftT3" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="straightEdgeFieldT3" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="polishedEdgesFieldT3" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Full BackSplash" />
+                                          <Label text="Square Foot: Full BS" GridPane.rowIndex="1" />
+                                          <Label text="Linear Feet: Straight Edge" GridPane.rowIndex="2" />
+                                          <Label text="Linear Feet: Polished Edges" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="346.0" layoutY="24.0" prefHeight="224.0" prefWidth="324.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="areaFieldsqftT2" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="straightEdgeFieldT2" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Four Inch BackSplash" />
+                                          <Label text="Square Feet: Four-Inch BS" GridPane.rowIndex="1" />
+                                          <Label text="Linear Feet: Straight Edge" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER" layoutX="1066.0" layoutY="75.0" spacing="5.0">
+                                       <children>
+                                          <Label text="Total Square Feet" />
+                                          <TextField fx:id="tableTotalField" text="0.00" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab8" disable="true" text="Working Proposal">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane layoutX="10.0" layoutY="10.0" prefHeight="208.0" prefWidth="342.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="trendFieldt5" text="0.00" GridPane.columnIndex="1" />
+                                          <TextField fx:id="edgingFieldt5" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="subTotalFieldt5" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="optionsField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="totalLevelPriceKitchenField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextField fx:id="bevelEdgingFieldt5" layoutX="148.0" layoutY="29.0" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="polishedEdgingFieldT1" layoutX="148.0" layoutY="52.0" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Trendstone Material" />
+                                          <Label text="Edging" GridPane.rowIndex="1" />
+                                          <Label text="Bevel Edging" GridPane.rowIndex="2" />
+                                          <Label text="Polished Edging" GridPane.rowIndex="3" />
+                                          <Label text="Options:" GridPane.rowIndex="4" />
+                                          <Label text="Sub Total:" GridPane.rowIndex="5" />
+                                          <Label text="Total Level Price" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane disable="true" layoutX="37.0" layoutY="51.0" prefHeight="130.0" prefWidth="727.0" visible="false">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" GridPane.halignment="CENTER" />
+                                          <TextField fx:id="firstNameFieldProposal" GridPane.columnIndex="1" />
+                                          <TextField fx:id="lastNameFieldProposal" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="cityFieldProposal" GridPane.columnIndex="3" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="City" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Street Address" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                          <TextField fx:id="streetAddressFieldProposal" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" styleClass="text" text="State" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" styleClass="text" text="Zip Code" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                          <TextField fx:id="stateFieldProposal" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextField fx:id="zipCodeFieldProposal" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="693.0" layoutY="12.0" prefHeight="138.0" prefWidth="290.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="fullBSField" text="0.00" GridPane.columnIndex="1" />
+                                          <TextField fx:id="bsEdgingField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="cutOutsField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="totalLevelPriceFullBSField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Full Backsplash" />
+                                          <Label text="Full Backsplash Edging" GridPane.rowIndex="1" />
+                                          <Label text="Cut outs" GridPane.rowIndex="2" />
+                                          <Label text="Total Level Price: Full BS" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="372.0" layoutY="10.0" prefHeight="141.0" prefWidth="292.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="fourInchBSField" text="0.00" GridPane.columnIndex="1" />
+                                          <TextField fx:id="fourInchBSEdgingField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="fourInchBuildOutField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="fourInchTotalField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Four Inch BS" />
+                                          <Label text="Four Inch BS edging" GridPane.rowIndex="1" />
+                                          <Label text="Build Outs" GridPane.rowIndex="2" />
+                                          <Label text="TOTAL : Four Inch BS" GridPane.rowIndex="3" />
+                                          <Label text="Total Level Price: 4 in" GridPane.rowIndex="4" />
+                                          <TextField fx:id="totalLevelPriceFourInchField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="1009.0" layoutY="8.0" prefHeight="216.0" prefWidth="321.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="mosaicStandardField" text="0.00" GridPane.columnIndex="1" />
+                                          <TextField fx:id="mosaicCustomField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="mosaicInlay5Field" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="mosaicBSEdgingField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="mosaicInlay12Field" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="mosaicTotalField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextField fx:id="mosaicCutOutField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Standard Mosaic Mix" />
+                                          <Label text="Custom Mosaic Mix" GridPane.rowIndex="1" />
+                                          <Label text="Mosaic BS Edging" GridPane.rowIndex="2" />
+                                          <Label text="Mosaic Cut Out" GridPane.rowIndex="3" />
+                                          <Label text="Inlays - diamond 5x5" GridPane.rowIndex="4" />
+                                          <Label text="Inlays - diamond 12x12" GridPane.rowIndex="5" />
+                                          <Label text="Total Mosaic Price" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                                    <TextField fx:id="bevelEdgingFieldt5NotCalc" layoutX="649.0" layoutY="442.0" text="0.00" visible="false" />
+                                    <GridPane layoutX="515.0" layoutY="275.0" prefHeight="70.0" prefWidth="337.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="105.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Total Plus Accessories  " />
+                                          <TextField fx:id="totalFinalPlusField" prefHeight="37.0" prefWidth="184.0" text="0.00" GridPane.columnIndex="1" />
+                                          <Label text="Total TrendStone Price" GridPane.rowIndex="1" />
+                                          <TextField fx:id="totalFinalField" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </center>
+               <top>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <ButtonBar>
+                           <buttons>
+                              <Button fx:id="minimizeButton" maxHeight="29.0" maxWidth="36.0" minHeight="10.0" minWidth="36.0" mnemonicParsing="false" onAction="#Minimize" prefHeight="29.0" prefWidth="10.0" styleClass="exit-button" text="-" />
+                              <Button fx:id="maximizeButton" maxHeight="29.0" maxWidth="36.0" minHeight="10.0" minWidth="36.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="10.0" styleClass="exit-button" text="◻" />
+                              <Button fx:id="exitButton" maxHeight="29.0" maxWidth="36.0" minHeight="10.0" minWidth="36.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="10.0" styleClass="exit-button" text="X" />
+                           </buttons>
+                        </ButtonBar>
+                        <MenuBar>
+                           <menus>
+                              <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem fx:id="updateBut" mnemonicParsing="false" onAction="#saveShower" text="Save">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem fx:id="loadItem" mnemonicParsing="false" text="Load" />
+                                    <MenuItem mnemonicParsing="false" onAction="#Exit" text="Close">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="DOWN" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Edit">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Delete" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Tabs">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Measurement Information" />
+                                    <MenuItem mnemonicParsing="false" text="Pricing Details" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="ObservableList">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#PrintCustomer" text="Customer Information" />
+                                    <MenuItem mnemonicParsing="false" onAction="#printOrderId" text="Order Id" />
+                                    <MenuItem mnemonicParsing="false" onAction="#printCustomerId" text="Customer Id" />
+                                    <MenuItem mnemonicParsing="false" onAction="#printEmployeeId" text="Employee Id" />
+                                    <MenuItem mnemonicParsing="false" onAction="#printShower" text="Print Shower" />
+                                    <MenuItem mnemonicParsing="false" onAction="#getShower" text="Get Shower" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Open Tabs">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Open Tab 8" />
+                                    <MenuItem mnemonicParsing="false" text="Open Tab 9" />
+                                </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                           <items>
+                              <Button mnemonicParsing="false" onAction="#findCustomer" text="Back To Find Customer" />
+                              <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="122.0" text="Calculate" />
+                              <Button fx:id="wordButton1" mnemonicParsing="false" text="Create Estimate" />
+                              <Button fx:id="wordButton12" layoutX="280.0" layoutY="10.0" mnemonicParsing="false" text="Send Estimate via Email" />
+                              <Button fx:id="wordButton11" layoutX="330.0" layoutY="10.0" mnemonicParsing="false" text="Open Estimate" />
+                           </items>
+                        </ToolBar>
+                     </children>
+                  </VBox>
+               </top>
+               <bottom>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="Current Customer: " />
+                        <Label fx:id="CustomerLabel" text="User" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
